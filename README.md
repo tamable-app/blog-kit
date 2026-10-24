@@ -38,7 +38,7 @@ Post HTML comes ready to render: headings get `#` links to themselves and tables
 `client` also reads one post (`getPost`, which tells you when a slug moved), one series, Tamable's redirects and previews:
 
 ```ts
-const draft = await client.preview(token) // null once the link expired
+const draft = await content.previewPage(token) // ready to render, never cached, null once the link expired
 ```
 
 ## Feeds and redirects

@@ -41,9 +41,9 @@ describe('the content source against the fake Tamable', () => {
     expect(await content.allPosts()).toBe(await content.allPosts())
   })
 
-  it('serves previews and refuses a wrong key', async () => {
-    const client = createTamableClient({ apiUrl: `http://localhost:${port}/api/v1`, readKey: FAKE_READ_KEY })
-    expect(await client.preview('ok/with/slash/')).toMatchObject({ title: 'A draft in progress' })
+  it('serves previews ready to render and refuses a wrong key', async () => {
+    expect(await source().previewPage('ok/with/slash/')).toMatchObject({ title: 'A draft in progress', seriesNav: null })
+    expect(await source().previewPage('expired')).toBeNull()
     await expect(source('wrong').allPosts()).rejects.toMatchObject({ status: 401 })
   })
 })

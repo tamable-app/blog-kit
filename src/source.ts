@@ -65,7 +65,15 @@ export function createContentSource(client: TamableClient, { cache = true, concu
     return { ...post, seriesNav: series ? seriesNav(series, slug) : null }
   }
 
-  return { allPosts, postSummaries, seriesSummaries, seriesDetail, postPage }
+  /** A draft through a preview link, ready to render like a post page, or null once the link expired. Never cached. */
+  async function previewPage(token: string): Promise<PostPage | null> {
+    const draft = await client.preview(token)
+    if (!draft) return null
+    const post = toPost(draft)
+    return { ...post, html: prepareHtml(post.html), seriesNav: null }
+  }
+
+  return { allPosts, postSummaries, seriesSummaries, seriesDetail, postPage, previewPage }
 }
 
 export type ContentSource = ReturnType<typeof createContentSource>

@@ -33,8 +33,13 @@ export function startFakeTamable({ fixtures = defaultFixtures(), port = 4010 }: 
       return send(401, { message: 'A valid site key is required.' })
     }
 
-    const body = fixture(fixtureName(path) ?? '')
-    return body ? send(200, body) : send(404, { message: 'Not found.' })
+    try {
+      const body = fixture(fixtureName(path) ?? '')
+      return body ? send(200, body) : send(404, { message: 'Not found.' })
+    }
+    catch {
+      return send(500, { message: 'The fixture is not valid JSON.' })
+    }
   })
 
   return new Promise(resolve => server.listen(port, () => resolve(server)))
