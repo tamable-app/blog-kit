@@ -1,0 +1,21 @@
+{
+  "data": {
+    "id": "9f1c2a40-7c1e-4d7a-9b51-1b9f0e2f6a01",
+    "title": "Hello world",
+    "slug": "hello-world",
+    "url": "https://example.com/blog/hello-world",
+    "excerpt": "A first post, to see how everything looks.",
+    "cover": null,
+    "published_at": "2024-03-07T09:00:00+00:00",
+    "updated_at": "2024-09-17T11:14:06+00:00",
+    "series": null,
+    "seo": {
+      "title": "Hello world",
+      "description": "A first post, to see how everything looks.",
+      "canonical_url": "https://example.com/blog/hello-world"
+    },
+    "tags": ["Work"],
+    "html": "<blockquote><p>\"Write what you would want to read.\"</p></blockquote><p>Every kind of block Tamable can send, in one post.</p><h2 id=\"blocks\">Blocks</h2><p>Read <a href=\"https://example.com/blog/notes-on-writing\">the writing post</a> or <a href=\"https://nuxt.com\" target=\"_blank\" rel=\"noopener\">Nuxt</a>.</p><figure><img src=\"https://cdn.tamable.app/files/frame.png\" alt=\"A diagram\" width=\"1600\" height=\"900\"><figcaption>Hours per project</figcaption></figure><figure class=\"video\"><iframe src=\"https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ\" title=\"YouTube video\" allowfullscreen=\"\" loading=\"lazy\" data-src=\"https://youtu.be/dQw4w9WgXcQ\"></iframe></figure><blockquote class=\"twitter-tweet\"><a href=\"https://x.com/example/status/1\" target=\"_blank\" rel=\"noopener\">https://x.com/example/status/1</a></blockquote><a class=\"link-card\" href=\"https://tamable.app\" data-title=\"Tamable\" data-description=\"Your content back office\" data-image=\"https://tamable.app/og.png\" target=\"_blank\" rel=\"noopener\"><img src=\"https://tamable.app/og.png\" alt=\"\"><span class=\"link-card-title\">Tamable</span><span class=\"link-card-description\">Your content back office</span></a><pre><code class=\"language-js\">const a = 1</code></pre><table><tbody><tr><th><p>Kind</p></th><th><p>Hours</p></th></tr><tr><td><p>Product</p></td><td><p>40</p></td></tr></tbody></table>",
+    "content": null
+  }
+}

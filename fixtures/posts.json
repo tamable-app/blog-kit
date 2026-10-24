@@ -1,0 +1,63 @@
+{
+  "data": [
+    {
+      "id": "3b7d1c22-5a8e-4f0b-8c3d-2e6f9a1b7c02",
+      "title": "Notes on writing",
+      "slug": "notes-on-writing",
+      "url": "https://example.com/blog/notes-on-writing",
+      "excerpt": "What a year of weekly posts taught me.",
+      "cover": null,
+      "published_at": "2024-10-08T09:00:00+00:00",
+      "updated_at": "2024-10-08T11:13:33+00:00",
+      "series": {
+        "slug": "getting-started",
+        "title": "Getting started",
+        "number": 1
+      },
+      "seo": {
+        "title": "Notes on writing",
+        "description": "What a year of weekly posts taught me.",
+        "canonical_url": "https://example.com/blog/notes-on-writing"
+      },
+      "tags": [
+        "Writing Tips",
+        "Work"
+      ]
+    },
+    {
+      "id": "9f1c2a40-7c1e-4d7a-9b51-1b9f0e2f6a01",
+      "title": "Hello world",
+      "slug": "hello-world",
+      "url": "https://example.com/blog/hello-world",
+      "excerpt": "A first post, to see how everything looks.",
+      "cover": null,
+      "published_at": "2024-03-07T09:00:00+00:00",
+      "updated_at": "2024-09-17T11:14:06+00:00",
+      "series": null,
+      "seo": {
+        "title": "Hello world",
+        "description": "A first post, to see how everything looks.",
+        "canonical_url": "https://example.com/blog/hello-world"
+      },
+      "tags": [
+        "Work"
+      ]
+    }
+  ],
+  "links": {
+    "first": "https://api.tamable.app/api/v1/posts?page=1",
+    "last": "https://api.tamable.app/api/v1/posts?page=1",
+    "prev": null,
+    "next": null
+  },
+  "meta": {
+    "current_page": 1,
+    "from": 1,
+    "last_page": 1,
+    "links": [],
+    "path": "https://api.tamable.app/api/v1/posts",
+    "per_page": 100,
+    "to": 2,
+    "total": 2
+  }
+}

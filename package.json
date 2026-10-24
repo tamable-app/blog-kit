@@ -1,0 +1,54 @@
+{
+  "name": "@tamable/blog-kit",
+  "version": "0.1.0",
+  "description": "Everything a site needs to publish a blog from a Tamable workspace: the read API client, content mapping, feeds, redirects, webhook checks and a fake API for tests.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tamable-app/blog-kit.git"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./webhook": {
+      "types": "./dist/webhook.d.ts",
+      "default": "./dist/webhook.js"
+    },
+    "./fake": {
+      "types": "./dist/fake.d.ts",
+      "default": "./dist/fake.js"
+    }
+  },
+  "bin": {
+    "fake-tamable": "./bin/fake-tamable.mjs"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "fixtures"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "@types/node": "^24.19.2",
+    "eslint": "^10.13.0",
+    "tsup": "^9.0.0",
+    "typescript": "~5.9",
+    "typescript-eslint": "^8.72.0",
+    "vitest": "^5.0.5"
+  }
+}
