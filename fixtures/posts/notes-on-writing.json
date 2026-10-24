@@ -1,0 +1,28 @@
+{
+  "data": {
+    "id": "3b7d1c22-5a8e-4f0b-8c3d-2e6f9a1b7c02",
+    "title": "Notes on writing",
+    "slug": "notes-on-writing",
+    "url": "https://example.com/blog/notes-on-writing",
+    "excerpt": "What a year of weekly posts taught me.",
+    "cover": null,
+    "published_at": "2024-10-08T09:00:00+00:00",
+    "updated_at": "2024-10-08T11:13:33+00:00",
+    "series": {
+      "slug": "getting-started",
+      "title": "Getting started",
+      "number": 1
+    },
+    "seo": {
+      "title": "Notes on writing",
+      "description": "What a year of weekly posts taught me.",
+      "canonical_url": "https://example.com/blog/notes-on-writing"
+    },
+    "tags": [
+      "Writing Tips",
+      "Work"
+    ],
+    "html": "<p>What a year of weekly posts taught me.</p><h2 id=\"weekly\">Weekly</h2><p>A fixture body for builds without the real API.</p>",
+    "content": null
+  }
+}

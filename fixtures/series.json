@@ -1,0 +1,16 @@
+{
+  "data": [
+    {
+      "slug": "getting-started",
+      "title": "Getting started",
+      "description": "A short series on getting started.",
+      "posts": 1
+    },
+    {
+      "slug": "empty-series",
+      "title": "Empty series",
+      "description": null,
+      "posts": 0
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "data": [
+    { "from": "https://example.com/blog/old-name", "to": "https://example.com/blog/hello-world" }
+  ]
+}
