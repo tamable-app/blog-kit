@@ -95,6 +95,8 @@ import { FAKE_READ_KEY, startFakeTamable } from '@tamable/blog-kit/fake'
 const server = await startFakeTamable({ port: 4010 })
 ```
 
+The fixtures themselves are importable too, for example `@tamable/blog-kit/fixtures/posts/hello-world.json`, a post with every kind of block.
+
 ## Development
 
 ```sh
