@@ -8,7 +8,19 @@ const summaries = posts.data.map(post => toPostSummary(post as TamablePost))
 
 describe('the redirect map', () => {
   it('answers nothing for Ghost addresses unless asked', () => {
-    expect(buildRedirects({ posts: summaries, renamed: [] })).toEqual({})
+    const map = buildRedirects({ posts: summaries, renamed: [] })
+
+    expect(map).not.toHaveProperty('/hello-world')
+    expect(Object.keys(map).some(from => from.startsWith('/tag/'))).toBe(false)
+  })
+
+  it('sends the old series and tag addresses to their homes under /blog', () => {
+    const map = buildRedirects({ posts: summaries, renamed: [] })
+
+    expect(map['/series']).toBe('/blog/series')
+    expect(map['/series/getting-started']).toBe('/blog/series/getting-started')
+    expect(map['/tags/work']).toBe('/blog/tags/work')
+    expect(map['/tags/writing-tips']).toBe('/blog/tags/writing-tips')
   })
 
   it('sends Ghost post addresses to /blog', () => {
@@ -21,8 +33,8 @@ describe('the redirect map', () => {
   it('sends Ghost tag and feed addresses to their new homes', () => {
     const map = buildRedirects({ posts: summaries, renamed: [], ghost: true })
 
-    expect(map['/tag/work']).toBe('/tags/work')
-    expect(map['/tag/writing-tips']).toBe('/tags/writing-tips')
+    expect(map['/tag/work']).toBe('/blog/tags/work')
+    expect(map['/tag/writing-tips']).toBe('/blog/tags/writing-tips')
     expect(map['/rss']).toBe('/rss.xml')
     expect(map['/feed']).toBe('/rss.xml')
   })
@@ -63,7 +75,13 @@ describe('the redirect map', () => {
 
     expect(map).not.toHaveProperty('/about')
     expect(map).not.toHaveProperty('/blog/hello-world')
-    expect(Object.keys(map).every(from => !from.startsWith('/series') && !from.startsWith('/preview'))).toBe(true)
+    expect(Object.keys(map).every(from => !from.startsWith('/blog/series') && !from.startsWith('/blog/tags') && !from.startsWith('/preview'))).toBe(true)
+  })
+
+  it('still redirects a renamed post, though /blog is live', () => {
+    const map = buildRedirects({ posts: summaries, renamed: [{ from: '/blog/old', to: '/blog/hello-world' }] })
+
+    expect(map['/blog/old']).toBe('/blog/hello-world')
   })
 
   it('points every redirect at a page that exists, not at another redirect', () => {

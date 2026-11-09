@@ -1,4 +1,5 @@
 import type { Post, SeriesSummary } from './content-types'
+import { BLOG_PATH, seriesPath, tagPath } from './paths'
 
 const FEED_SIZE = 20
 
@@ -61,10 +62,10 @@ export function sitemapEntries(pages: string[], posts: Post[], series: SeriesSum
   const latest = posts[0]?.updatedAt ?? null
   const tags = [...new Set(posts.flatMap(post => post.tags.map(tag => tag.slug)))].sort()
   return [
-    ...pages.map(path => ({ path, lastmod: path === '/' || path === '/blog' ? latest : null })),
+    ...pages.map(path => ({ path, lastmod: path === '/' || path === BLOG_PATH ? latest : null })),
     ...posts.map(post => ({ path: post.path, lastmod: post.updatedAt })),
-    ...tags.map(tag => ({ path: `/tags/${tag}` })),
-    ...series.map(s => ({ path: `/series/${s.slug}` })),
+    ...tags.map(tag => ({ path: tagPath(tag) })),
+    ...series.map(s => ({ path: seriesPath(s.slug) })),
   ]
 }
 

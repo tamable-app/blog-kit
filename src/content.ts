@@ -1,12 +1,9 @@
 import type { Cover, Post, PostSummary, Series, SeriesNav, SeriesSummary, Tag } from './content-types'
 import type { TamableCover, TamablePost, TamableRedirect, TamableSeries, TamableSeriesSummary } from './types'
+import { postPath } from './paths'
 import { slugify } from './slug'
 
 const WORDS_PER_MINUTE = 220
-
-export function postPath(slug: string): string {
-  return `/blog/${slug}`
-}
 
 export function toTag(name: string): Tag {
   return { name, slug: slugify(name) }
