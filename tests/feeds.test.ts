@@ -41,8 +41,8 @@ describe('the sitemap', () => {
 
     expect(xml).toContain('<loc>https://example.com</loc>')
     expect(xml).toContain('<loc>https://example.com/blog/hello-world</loc>\n    <lastmod>2024-09-17T11:14:06+00:00</lastmod>')
-    expect(xml).toContain('<loc>https://example.com/tags/writing-tips</loc>')
-    expect(xml).toContain('<loc>https://example.com/series/getting-started</loc>')
+    expect(xml).toContain('<loc>https://example.com/blog/tags/writing-tips</loc>')
+    expect(xml).toContain('<loc>https://example.com/blog/series/getting-started</loc>')
     expect(xml.match(/<url>/g)).toHaveLength(2 + 2 + 2 + 1)
   })
 })

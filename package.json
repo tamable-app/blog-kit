@@ -1,6 +1,6 @@
 {
   "name": "@tamable/blog-kit",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Everything a site needs to publish a blog from a Tamable workspace: the read API client, content mapping, feeds, redirects, webhook checks and a fake API for tests.",
   "license": "MIT",
   "repository": {

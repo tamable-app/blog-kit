@@ -44,10 +44,10 @@ const draft = await content.previewPage(token) // ready to render, never cached,
 ## Feeds and redirects
 
 ```ts
-import { buildRedirects, redirectPaths, rssXml, sitemapEntries, sitemapXml } from '@tamable/blog-kit'
+import { BLOG_PATH, buildRedirects, redirectPaths, rssXml, SERIES_PATH, sitemapEntries, sitemapXml } from '@tamable/blog-kit'
 
 const rss = rssXml(posts, { siteUrl, title: 'My blog', description: 'Notes and stories', language: 'en' })
-const sitemap = sitemapXml(sitemapEntries(['/', '/blog', '/series'], posts, series), siteUrl)
+const sitemap = sitemapXml(sitemapEntries(['/', BLOG_PATH, SERIES_PATH], posts, series), siteUrl)
 
 // Every permanent redirect, as path to path, one hop each.
 const redirects = buildRedirects({
@@ -56,6 +56,22 @@ const redirects = buildRedirects({
   ghost: false, // true to also answer an old Ghost blog's addresses
 })
 ```
+
+The redirects always include the starters' old series and tag addresses (`/series/<slug>`, `/tags/<tag>`), which now live under `/blog`.
+
+## Addresses
+
+Everything lives under `/blog`: posts at `/blog/<slug>`, and each other section under a word of its own, so a new section never needs a new root.
+
+```ts
+import { postPath, seriesPath, tagPath, SERIES_PATH, TAGS_PATH } from '@tamable/blog-kit'
+
+postPath('hello-world') // /blog/hello-world
+seriesPath('getting-started') // /blog/series/getting-started
+tagPath('work') // /blog/tags/work
+```
+
+A section's word can never be a post's address: Tamable doesn't give a blog post a slug in `RESERVED_SLUGS` (`series`, `tags`, `categories`, `page` and a few more). `isReservedSlug(slug)` checks one. Add a section under one of those words, never under a word outside the list.
 
 ## The deploy webhook
 
