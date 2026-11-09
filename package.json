@@ -27,7 +27,7 @@
     "./fixtures/*": "./fixtures/*"
   },
   "bin": {
-    "fake-tamable": "./bin/fake-tamable.mjs"
+    "fake-tamable": "bin/fake-tamable.mjs"
   },
   "files": [
     "bin",
